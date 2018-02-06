@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body>
+
+<h2>Press Button for event driven programming</h2>
+
+<button id="my-button" class="button">Start Event</button>
+
+</body>
+
+<script>
+
+var el = document.getElementById("my-button");
+
+// Example of a callback since it is an asynochronous event waiting for some criteria to be met
+if (el.addEventListener) {
+    el.addEventListener("click", function() {
+        alert("That actually worked");
+    }, false);
+} else { //IE8 support
+    el.attachEvent("onclick", function() { 
+        alert("clicked");
+    });
+}
+
+</script>
+</html>
